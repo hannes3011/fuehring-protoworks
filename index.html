@@ -152,17 +152,35 @@
         </div>
       </form>
 
-      <!-- Erfolgsmeldung -->
+    <!-- Schöne Erfolgsmeldung auf deiner Seite -->
       <div id="success-message" class="hidden bg-emerald-900/30 border border-emerald-500 p-10 rounded-3xl text-center mt-8">
-        <i class="fa-solid fa-check-circle text-6xl text-emerald-400 mb-4"></i>
+        <i class="fa-solid fa-check-circle text-6xl text-emerald-400 mb-6"></i>
         <h3 class="text-3xl font-bold mb-3">Vielen Dank!</h3>
         <p class="text-zinc-300 text-lg">Ihre Anfrage wurde erfolgreich übermittelt.<br>Wir melden uns schnellstmöglich bei Ihnen.</p>
-        <button onclick="location.reload()" class="mt-8 px-8 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl text-sm font-medium">
+        <button onclick="location.reload()" class="mt-8 px-8 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl">
           Neue Anfrage senden
         </button>
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      submitBtn.innerHTML = 'Wird gesendet...';
+      submitBtn.disabled = true;
+    });
+
+    // Nach erfolgreichem Absenden (Formspree leitet um, aber wir zeigen eigene Meldung)
+    window.onload = () => {
+      document.querySelector('#dark-toggle i').classList.add('fa-moon');
+    };
+  </script>
+</body>
+</html>
 
   <!-- Footer -->
   <footer class="bg-zinc-950 py-12 border-t border-zinc-900">
