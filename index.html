@@ -129,28 +129,18 @@
     </div>
   </section>
 
-  <!-- Kontakt - Netlify Forms -->
-  <section id="kontakt" class="py-24 bg-black">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 id="contact-title" class="text-4xl font-bold mb-4">Projekt starten</h2>
-        <p id="slogan" class="text-3xl font-medium text-cyan-400">"Red ma drüber"</p>
-        <p id="contact-subtitle" class="text-zinc-400 mt-2">Egal ob Idee, Skizze oder fertiges CAD – wir sprechen darüber und machen es real.</p>
-      </div>
-      
-      <form name="contact" method="POST" data-netlify="true" class="bg-zinc-900 p-10 rounded-3xl border border-zinc-800">
-        <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" name="name" placeholder="Name *" required class="bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500">
-          <input type="text" name="firma" placeholder="Firma (optional)" class="bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500">
-          <input type="email" name="email" placeholder="E-Mail-Adresse *" required class="bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500">
-          <input type="tel" name="telefon" placeholder="Telefon (optional)" class="bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500">
+  <!-- Formspree Formular - funktioniert zuverlässig -->
+      <form action="https://formspree.io/f/xgvwvdrj" method="POST" class="bg-zinc-900 p-10 rounded-3xl">
+        <div class="space-y-6">
+          <input type="text" name="name" placeholder="Name *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <input type="email" name="email" placeholder="E-Mail *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <input type="text" name="firma" placeholder="Firma (optional)" class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <textarea name="nachricht" rows="6" placeholder="Beschreibung Ihres Projekts *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl"></textarea>
+          
+          <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-5 rounded-2xl text-lg">
+            Anfrage absenden
+          </button>
         </div>
-        <input type="text" name="betreff" placeholder="Betreff" class="mt-6 w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500">
-        <textarea name="nachricht" rows="7" placeholder="Beschreiben Sie Ihr Projekt... *" required class="mt-6 w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-cyan-500"></textarea>
-        
-        <button type="submit" class="mt-10 w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 py-5 rounded-2xl font-semibold text-lg transition">
-          Anfrage absenden
-        </button>
       </form>
     </div>
   </section>
