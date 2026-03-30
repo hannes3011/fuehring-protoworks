@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
 
@@ -13,7 +14,8 @@
   
   <style>
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('images/hero.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), 
+                  url('images/hero.jpg') center/cover no-repeat;
       background-attachment: fixed;
     }
     @media (max-width: 768px) {
@@ -84,7 +86,48 @@
     </div>
   </section>
 
-  <!-- Leistungen, Materialien, Galerie bleiben gleich (aus Platzgründen hier gekürzt) -->
+  <!-- Leistungen -->
+  <section id="leistungen" class="py-24 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 id="section-services" class="text-4xl font-bold text-center mb-16">Was wir für Sie tun</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-800 hover:border-cyan-500/50 transition">
+          <h3 id="service1-title" class="text-2xl font-semibold mb-4">Design & Entwicklung</h3>
+          <p id="service1-desc" class="text-zinc-400">CAD-Design, Optimierung für den 3D-Druck und funktionsfähige Prototypen.</p>
+        </div>
+        <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-800 hover:border-cyan-500/50 transition">
+          <h3 id="service2-title" class="text-2xl font-semibold mb-4">Prototypenfertigung</h3>
+          <p id="service2-desc" class="text-zinc-400">Schnelle Iterationen mit hoher Präzision – ab 0,05 mm Schichthöhe.</p>
+        </div>
+        <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-800 hover:border-cyan-500/50 transition">
+          <h3 id="service3-title" class="text-2xl font-semibold mb-4">Klein- & Großserien</h3>
+          <p id="service3-desc" class="text-zinc-400">Zuverlässige Produktion von 1 bis mehreren tausend Teilen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materialien -->
+  <section id="materialien" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 id="section-materials" class="text-4xl font-bold text-center mb-6">FDM-Materialien</h2>
+      <p id="materials-subtitle" class="text-center text-zinc-400 mb-16 max-w-2xl mx-auto">Wir drucken mit allen gängigen und hochtechnischen Filamenten.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="material-grid"></div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="py-24 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 id="section-gallery" class="text-4xl font-bold text-center mb-16">Unsere Prototypen in der Praxis</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <img src="images/prototyp1.jpg" class="gallery-img rounded-3xl aspect-square object-cover" alt="Prototyp 1">
+        <img src="images/prototyp2.jpg" class="gallery-img rounded-3xl aspect-square object-cover" alt="Prototyp 2">
+        <img src="images/prototyp3.jpg" class="gallery-img rounded-3xl aspect-square object-cover" alt="Prototyp 3">
+        <img src="images/prototyp4.jpg" class="gallery-img rounded-3xl aspect-square object-cover" alt="Prototyp 4">
+      </div>
+    </div>
+  </section>
 
   <!-- Kontakt - Netlify Forms -->
   <section id="kontakt" class="py-24 bg-black">
@@ -121,12 +164,11 @@
   </footer>
 
   <script>
-    // Sprachumschaltung, Dark Mode etc. (vereinfacht)
+    // Sprachumschaltung, Dark Mode und Materialien (vereinfacht)
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
     }
 
-    // Hier kannst du später die volle Sprachfunktion wieder einbauen
     window.onload = () => {
       document.querySelector('#dark-toggle i').classList.add('fa-moon');
     };
