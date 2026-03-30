@@ -152,7 +152,21 @@
         </div>
       </form>
 
-      <!-- Eigene Erfolgsmeldung -->
+     <!-- Formular -->
+      <form id="contact-form" action="https://formspree.io/f/xaqlokqe" method="POST" class="bg-zinc-900 p-10 rounded-3xl">
+        <div class="space-y-6">
+          <input type="text" name="name" placeholder="Name *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <input type="email" name="email" placeholder="E-Mail *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <input type="text" name="firma" placeholder="Firma (optional)" class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl">
+          <textarea name="nachricht" rows="6" placeholder="Beschreibung Ihres Projekts *" required class="w-full p-4 bg-zinc-950 border border-zinc-700 rounded-2xl"></textarea>
+          
+          <button type="submit" id="submit-btn" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-5 rounded-2xl text-lg">
+            Anfrage absenden
+          </button>
+        </div>
+      </form>
+
+      <!-- Eigene Erfolgsmeldung auf deiner Seite -->
       <div id="success-message" class="hidden bg-emerald-900/30 border border-emerald-500 p-10 rounded-3xl text-center mt-8">
         <i class="fa-solid fa-check-circle text-6xl text-emerald-400 mb-6"></i>
         <h3 class="text-3xl font-bold mb-3">Vielen Dank!</h3>
@@ -163,6 +177,26 @@
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();                    // Verhindert die Standard-Weiterleitung
+      submitBtn.innerHTML = 'Wird gesendet...';
+      submitBtn.disabled = true;
+
+      // Simuliert das Absenden (Formspree macht den Rest im Hintergrund)
+      setTimeout(() => {
+        form.style.display = 'none';
+        successMsg.classList.remove('hidden');
+      }, 800);
+    });
+  </script>
+</body>
+</html>
 
   <!-- Footer -->
   <footer class="bg-zinc-950 py-12 border-t border-zinc-900">
